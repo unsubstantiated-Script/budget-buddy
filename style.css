@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Playfair+Display+SC&display=swap');
+
+:root {
+
+    --first-color: #3B4B59;
+    --second-color: #F2B999;
+    --third-color: #BF843B;
+    --fourth-color: #97A4A6;
+    --light-color: #f8f8ff;
+    --button-shadow: 0 5px 7px rgba(0, 0, 0, 0.7), 0 5px 6px rgba(0, 0, 0, 0.8);
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 0 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--first-color);
+    color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Playfair Display SC', serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    background-color: var(--light-color);
+    color: var(--third-color);
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+}
+
+h3 {
+    border-bottom: 1px solid var(--second-color);
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.container {
+    margin: 30px auto;
+    width: 350px;
+}
+
+.inc-exp-container {
+    background-color: var(--light-color);
+    color: var(--third-color);
+    box-shadow: var(--box-shadow);
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.inc-exp-container>div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container>div:first-of-type {
+    border-right: 1px solid var(--first-color);
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: #035928;
+}
+
+.money.minus {
+    color: #D92818;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+    border: 1px solid var(--second-color);
+    border-radius: 4px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--third-color);
+    box-shadow: var(--button-shadow);
+    color: var(--light-color);
+    border: none;
+    display: block;
+    font-size: 16px;
+    margin: 20px 0 30px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+
+
+.btn:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: var(--light-color);
+    box-shadow: var(--box-shadow);
+    color: var(--third-color);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.list li.plus {
+    border-right: 5px solid #035928;
+}
+
+.list li.minus {
+    border-right: 5px solid #D92818;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: var(--third-color);
+    border: 0;
+    border-left: 2px solid var(--light-color);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
+    color: var(--light-color);
+    font-size: 20px;
+    line-height: 20px;
+    padding: 3px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:active {
+    background-color: var(--light-color);
+    border-left: 2px solid var(--light-color);
+    color: var(--third-color)
+}
